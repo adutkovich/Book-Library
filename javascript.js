@@ -45,11 +45,14 @@ function closeModal(){
 }
 
 const submitButton = document.getElementById('bookSubmit')
-submitButton.addEventListener('click', function(event){
-    event.preventDefault()
+submitButton.addEventListener('click', function(e){
+    if(title.value === '' || author.value === '' || pages.value === ''){
+        
+    }else{
+    e.preventDefault()
     addBookToLibrary()
     updateGrid()
-    closeModal()
+    closeModal()}
 })
 
 function updateGrid(){
